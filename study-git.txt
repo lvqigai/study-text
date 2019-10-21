@@ -38,4 +38,3 @@ $ cat .gitignore
 *.<oa>
 *~
 
-BBBBBB
