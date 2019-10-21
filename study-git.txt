@@ -1,6 +1,6 @@
 git init  创建一个库
-git clone [url] [file-name] 克隆一个仓库
-git add [file]  添加/更新文件至缓存区
+git clone <url> <file-name> 克隆一个仓库
+git add <file>  添加/更新文件至缓存区
 git commit -m "备注"  更新缓存区文件的仓库
 
 
@@ -14,15 +14,28 @@ git reflog 查看命令记录
 
 
  git reset --hard HEAD^  退回上一个版本
- git reset --hard [版本号]  退回指定版本
- git reset --hard [file-name]  把缓存区指定文件放回工作区
- git checkout -- [file-name] 回到上一版本（放弃工作区修改）
+ git reset --hard <版本号>  退回指定版本
+ git reset --hard <file-name>  把缓存区指定文件放回工作区
+ git checkout -- <file-name> 回到上一版本（放弃工作区修改）
+ git rm <file>  在版本库中删除文件
 
 
-$ git mv file_from file_to  修改一个文件的名字
+git mv file_from file_to  修改一个文件的名字
+
+git branch 查看当前分支
+git branch <name> 创建分支
+git checkout <name>  切换分支
+git checkout -b <name> 创建并切换分支
+git switch -c <name> 新版命令
+git merge <name> 合并指定分支到当前分支
+git branch -d <name>
+
+
+
+
 
 
 忽略文件设置，躲不开命令行编辑文件
 $ cat .gitignore
-*.[oa]
+*.<oa>
 *~
