@@ -1,0 +1,16 @@
+git init  创建一个库
+git add [file]  添加/更新文件至缓存区
+git commit -m "备注"  更新缓存区文件的仓库
+
+
+git status  查看变更
+
+
+
+git clone [url] [file-name] 克隆一个仓库
+
+
+忽略文件设置，躲不开命令行编辑文件
+$ cat .gitignore
+*.[oa]
+*~
