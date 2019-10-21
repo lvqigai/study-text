@@ -5,6 +5,10 @@ git commit -m "备注"  更新缓存区文件的仓库
 git mv <file_from> <file_to>  修改一个文件的名字
 git rm <file>  在版本库中删除文件
 
+ssh-keygen -t rsa -C "youremail@example.com"  获取 SSH-key
+git remote add origin <url> 关联远程服务器
+git push -u <origin> <分支>
+
 git status  查看变更
 git diff  查看详细变更
 git diff --cached  查看缓存区变更
