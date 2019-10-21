@@ -1,4 +1,5 @@
 git init  创建一个库
+git clone [url] [file-name] 克隆一个仓库
 git add [file]  添加/更新文件至缓存区
 git commit -m "备注"  更新缓存区文件的仓库
 
@@ -6,16 +7,19 @@ git commit -m "备注"  更新缓存区文件的仓库
 git status  查看变更
 git diff  查看详细变更
 git diff --cached  查看缓存区变更
+git log 查看提交日志
+git log -2 查看最近两次提交日志
+git log  --pretty=oneline 只看关键信息
+git reflog 查看命令记录
 
 
-
-git clone [url] [file-name] 克隆一个仓库
-
-
+ git reset --hard HEAD^  退回上一个版本
+ git reset --hard [版本号]  退回指定版本
+ git reset --hard [file-name]  把缓存区指定文件放回工作区
+ git checkout -- [file-name] 回到上一版本（放弃工作区修改）
 
 
 $ git mv file_from file_to  修改一个文件的名字
-
 
 
 忽略文件设置，躲不开命令行编辑文件
