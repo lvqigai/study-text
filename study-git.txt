@@ -4,10 +4,18 @@ git commit -m "备注"  更新缓存区文件的仓库
 
 
 git status  查看变更
+git diff  查看详细变更
+git diff --cached  查看缓存区变更
 
 
 
 git clone [url] [file-name] 克隆一个仓库
+
+
+
+
+$ git mv file_from file_to  修改一个文件的名字
+
 
 
 忽略文件设置，躲不开命令行编辑文件
