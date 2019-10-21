@@ -37,3 +37,5 @@ git log --graph  分支合并图
 $ cat .gitignore
 *.<oa>
 *~
+
+AAAAAA
