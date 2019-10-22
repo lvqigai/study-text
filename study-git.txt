@@ -7,7 +7,7 @@ git commit --amend # 提交并合并入上次提交
 git mv <file_from> <file_to>  # 修改一个文件的名字
 
 git rm <file>  # 移除文件跟踪
-git rm -f <file>  # 强制移出已缓存的文件跟踪
+git rm -f <file>  # 强制移除已缓存的文件跟踪
 git rm --cached <file> #移除缓存，但保留本地
 
 
@@ -23,11 +23,18 @@ git log --oneline --graph #查看分支合并和提交历史
 git log --oneline --decorate # 查看各个分支所指对象
 git reflog # 查看命令记录
 
-git reset --hard HEAD^  # 退回上一个版本
-git reset --hard <版本号>  # 退回指定版本
-git reset --hard <file>  # 把缓存区指定文件放回工作区
-git reset HEAD <file>  # 取消暂存（放弃暂存）
+git reset --hard HEAD^  # 退回上一个版本（放弃工作区）
+git reset --hard <版本号>  # 退回指定版本（放弃工作区）
+git reset --hard <file>  # 把缓存区指定文件放回工作区（放弃工作区）
+git reset <file>  # 将已提交文件放入缓存区
+git reset <index> <file>  # 将指定版本的已提交文件放入暂存区，不移动指针
+git resrt <index> # 调节指针
 git checkout -- <file>  # 回到上一版本（放弃工作区）
+
+
+git branch <name> # 创建分支
+git branch <name> # 切换分支
+git branch -b <name> # 创建并切换分支
 
 git branch # 查看当前所有分支
 git branch -v # 查看当前所有分支的最后提交信息
@@ -35,9 +42,16 @@ git branch -vv #更详细的信息
 git branch --merged # 已经合并到当前分支的分支
 git branch --no-merged # 未合并到当前分支的分支
 
-git branch <name> # 创建分支
-git branch <name> # 切换分支
-git branch -b <name> # 创建并切换分支
+git merge <name> # 合并指定分支到当前分支
+git branch -d <name> # 删除分支
+git branch -D <name> # 强制删除分支
+git log --graph  # 分支合并图
+
+git rebase <master> # 变基指定分支到当前分支
+git rebase --onto <目标分支> <排除分支> <提取分支> # 不知道咋说
+git rebase <teamone/master>  # 如果有蠢货居然在远程服务器上进行变基……用变基解决变基
+git pull --rebase # 快速解决远程服务器上的变基
+
 
 ssh-keygen -t rsa -C "youremail@example.com"  # 获取 SSH-key
 git remote add <origin> <url> # 关联远程服务器
@@ -48,23 +62,14 @@ git remote rm <remote-name>  # 移除远程仓库
 git push <origin> <分支> # 将指定分支推送至远程服务器
 git push <origin> <本地分支:远程分支> # 将指定分支推送至远程服务器指定的分支内
 git fetch [remote-name] # 获取远程服务器数据至本地仓库
-git fatch --all # 获取所有分支数据
-git pull # 自动抓取远程分支并合并到当前分支
+git fetch --all # 获取所有分支数据
+git pull # 自动抓取远程分支并合并到当前分e [e]支
 
 git checkout -b <serverfix> <origin/serverfix> # 基于远程分支创建本地分支
 git checkout --track <origin/serverfix> # 基于远程分支创建本地分支(同名)
 git branch -u <origin/serverfix>  # 设置本地分支跟踪一个刚刚拉取下来的远程分支
 git push origin --delete <serverfix> # 删除远程分支
 
-git merge <name> # 合并指定分支到当前分支
-git branch -d <name> # 删除分支
-git branch -D <name> # 强制删除分支
-git log --graph  # 分支合并图
-
-git rebase <master> # 变基指定分支到当前分支
-git rebase --onto <目标分支> <排除分支> <提取分支> # 不知道咋说
-git rebase <teamone/master>  # 如果有人居然在远程服务器上进行变基……用变基解决变基
-git pull --rebase # 快速解决远程服务器上的变基
 
 忽略文件设置，支持正则。
 $ cat .gitignore
