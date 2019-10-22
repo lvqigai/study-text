@@ -76,3 +76,6 @@ $ cat .gitignore
 *.<oa>
 *~
 
+# 生成 GitHub 公钥
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+cat ~/.ssh/id_rsa.pub # 查看公钥
